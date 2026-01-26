@@ -1,85 +1,119 @@
-/* 全局设置：极简、黑暗、高级 */
+/* ===================================
+   The Echo Bridge - Luxury Minimalist
+   =================================== */
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000000; /* 纯黑背景 */
-    font-family: 'Courier New', Courier, monospace; /* 打字机字体，增加严肃感 */
+    background-color: #050505; /* 极深黑色，比纯黑更有质感 */
+    font-family: 'Inter', sans-serif;
     color: #E0E0E0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
-    max-width: 600px;
-    padding: 20px;
+    max-width: 800px;
+    padding: 40px;
 }
 
-/* 文字样式 */
+/* 顶部文案 */
 .sub-text {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: normal;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-    color: #fff;
-    line-height: 1.2;
-}
-
-.description {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 5px; /* 增加字间距，展现奢侈品感 */
     color: #888;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-/* 按钮设计：呼吸光效 */
+/* 主标题 */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: #D4AF37; /* 金色高亮关键问句 */
+}
+
+/* 描述文案 */
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #aaa;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.description strong {
+    color: #fff;
+    font-weight: 400;
+    border-bottom: 1px dashed #D4AF37;
+}
+
+/* 按钮设计：不仅有呼吸感，还要有“重金感” */
 .enter-btn {
     display: inline-block;
-    padding: 15px 40px;
-    border: 1px solid #D4AF37; /* 金色边框 */
+    padding: 20px 60px;
+    background: transparent;
+    border: 1px solid #D4AF37;
     color: #D4AF37;
     text-decoration: none;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-    animation: breathe 3s infinite ease-in-out; /* 呼吸动画 */
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .enter-btn:hover {
     background-color: #D4AF37;
     color: #000;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+    transform: scale(1.05);
 }
 
-.security-note {
-    margin-top: 15px;
-    font-size: 0.7rem;
+/* 信任背书图标 */
+.trust-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.75rem;
     color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 简单的入场动画 */
+/* 动画系统 */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s forwards cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.delay-1 { animation-delay: 0.5s; }
-.delay-2 { animation-delay: 1.5s; }
+.delay-1 { animation-delay: 0.4s; }
+.delay-2 { animation-delay: 1.2s; }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
+@keyframes fadeInUp {
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
 }
 
-@keyframes breathe {
-    0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
-    50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+/* 屏幕适配 */
+@media (max-width: 480px) {
+    .container { padding: 20px; }
+    .description { font-size: 0.95rem; }
 }
