@@ -3,39 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Echo Vault | Entry</title>
-    <!-- 引入高级感字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Echo Box | Secure Your Digital Legacy</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts: Inter (现代感) & Playfair Display (仪式感) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- 顶部文字：强化权威感和永恒感 -->
-        <header class="fade-in">
-            <p class="sub-text">THE ETERNAL ECHO VAULT</p>
+        <!-- 头部：仪式感与痛点 -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-box-open"></i> Echo Box
+            </div>
+            <h1>Don't Let Your Story <br><span class="gold-text">Die With You.</span></h1>
+            <p class="subtitle">The secure digital vault for your final words, passwords, and love. Delivered <strong>only</strong> when you are gone.</p>
         </header>
 
-        <!-- 核心拷问：保持这句神级文案 -->
-        <main class="fade-in delay-1">
-            <h1>If you left today,<br><span class="highlight">what remains?</span></h1>
-            <p class="description">
-                A digital sanctuary for the words that must never fade.<br>
-                For your <strong>children</strong>, your <strong>partner</strong>, or your <strong>legacy</strong>.
-            </p>
-        </main>
+        <!-- 核心功能区：输入 -->
+        <div class="card">
+            <div class="input-group">
+                <label for="to"><i class="fa-solid fa-user-shield"></i> Recipient (Who gets this?)</label>
+                <input type="text" id="to" placeholder="e.g. My Daughter, or email@address.com">
+            </div>
 
-        <!-- 互动区域 -->
-        <div class="action-area fade-in delay-2">
-            <!-- 按钮指向主站 -->
-            <a href="https://the-echo-box.vercel.app" class="enter-btn">
-                SEAL YOUR ECHO
-            </a>
-            <div class="trust-icons">
-                <span>🔒 Encrypted</span>
-                <span>✨ Permanent</span>
-                <span>🏛️ High-Resolution</span>
+            <div class="input-group">
+                <label for="content"><i class="fa-solid fa-pen-nib"></i> Your Legacy Message</label>
+                <textarea id="content" rows="6" placeholder="Write something they need to hear... 
+e.g. 'My bank password is...', 'I never told you that...', or 'I am proud of you.'"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="password"><i class="fa-solid fa-key"></i> Set Unlock Key</label>
+                <input type="password" id="password" placeholder="Create a secure key for them">
+            </div>
+
+            <button id="generate-btn">
+                <i class="fa-solid fa-fingerprint"></i> Seal My Echo ($19.99)
+            </button>
+            
+            <!-- 信任背书：消除购买顾虑 -->
+            <div class="trust-badges">
+                <span><i class="fa-solid fa-shield-halved"></i> AES-256 Encryption</span>
+                <span><i class="fa-solid fa-infinity"></i> Lifetime Storage</span>
             </div>
         </div>
+
+        <!-- 结果展示区 (隐藏) -->
+        <div id="result-area" class="hidden">
+            <div class="result-card">
+                <h3><i class="fa-solid fa-check-circle"></i> Legacy Sealed</h3>
+                <p>Your Echo has been encrypted and stored.</p>
+                <div class="qr-container">
+                    <div id="qrcode"></div>
+                </div>
+                <p class="instruction">Save this key. It is the only way to unlock your message.</p>
+            </div>
+        </div>
+
+        <!-- 底部版权 -->
+        <footer class="footer">
+            <p>&copy; 2026 Echo Box Vault. All rights reserved.</p>
+            <p class="small">Secure. Private. Eternal.</p>
+        </footer>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
